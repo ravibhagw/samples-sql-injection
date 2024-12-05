@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <script src="/static/app.js" defer></script>
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+    <h1>User List</h1>
+    <form id="add-user-form" onsubmit="addUser(event)">
+        <label>Name:</label>
+        <input type="text" id="name" required>
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <button type="submit">Add User</button>
+    </form>
+    <h2>All Users:</h2>
+    <ul id="user-list">
+        {% for user in users %}
+            <li>{{ user[0] }} ({{ user[1] }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
